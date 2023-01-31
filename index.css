@@ -1,0 +1,94 @@
+body {
+    background-color: #F5E9BE;
+    background-image: url('../images/background.png');
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    height: 100%;
+    margin: 0;
+    overflow: hidden;
+    background-attachment: fixed;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#logo {
+    position: fixed;
+    height: 15%;
+    left: 36px;
+    top: 36px;
+}
+
+h1 {
+    font-family: 'Abril Fatface';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 95px;
+    color: #174C4F;
+}
+
+section {
+  height: 98vh;
+  width: 99vw;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+    max-width: 700px;
+    margin: auto;
+
+    height: 65vh;
+    display: flex;
+    justify-content: center;
+}
+
+
+.btn1 {
+    position: fixed;
+    width: 80px;
+    height: 36px;
+    top: 34px;
+    right: 130px;
+    border-radius: 45px;
+    font-family: 'Lato';
+    color: #E0E6B4;
+    font-size: 14px;
+    background: #FC3652;
+    padding: 0px;
+    text-decoration: none;
+    border-color: #FC3652;
+    border-style: solid;
+  }
+  
+  .btn1:hover {
+    color: #FC3652;
+    background: #E0E6B4;
+    text-decoration: none;
+  }
+
+  .btn2 {
+    position: fixed;
+    width: 80px;
+    height: 36px;
+    top: 34px;
+    right: 35px;
+    border-radius: 45px;
+    font-family: 'Lato';
+    color: #FC3652;
+    font-size: 14px;
+    background: #E0E6B4;
+    padding: 0px;
+    text-decoration: none;
+    border-color: #FC3652;
+    border-style: solid;
+  }
+  
+  .btn2:hover {
+    color: #E0E6B4;
+    background: #FC3652;
+    text-decoration: none;
+  }
