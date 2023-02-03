@@ -1,0 +1,227 @@
+body 
+{
+    background-color: #F5E9BE;
+    background-image: url('background2.png');
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    height: 100%;
+    margin: 0;
+    overflow: hidden;
+    background-attachment: fixed;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    text-align: center;
+
+}
+
+#logo {
+    position: fixed;
+    height: 15%;
+    left: 36px;
+    top: 36px;
+}
+
+.input-form {
+    width: 10%;
+    text-align: center;
+    font-family: 'Lato';
+}
+
+.input-field {
+    border-radius: 12px;
+    font-family: 'Montserrat';
+    outline: 0;
+    background: #f2f2f2;
+    width: 100%;
+    border: 0;
+    margin: 0 0 15px;
+    padding: 15px;
+    box-sizing: border-box;
+    font-size: 10px;
+    position: relative;
+    text-align: center;
+    font-family: 'Lato';
+    justify-content: center;
+}
+
+
+
+.form {
+    border-radius: 17px;
+    position: relative;
+    background: lightgreen;
+    margin: 0 auto 100px;
+    top: 100px;
+    padding: 30px;
+    overflow: hidden;
+    height: 350px;
+    transition: .6s;
+    display: inline-block;
+    font-family: 'Lato';
+
+}
+
+span{
+    font-family: 'Lato';
+}
+
+
+section {
+    height: 99vh;
+    width: 99vw;
+    border-radius: 8px;
+    perspective: 1000px;
+    transition: .5s;
+    display: flex;
+    align-items: center;
+
+}
+
+
+.cover_div{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: .5s;
+    transform-style: preserve-3d;
+    text-align: center;
+    justify-content: center;
+}
+
+.cover_div div{
+    padding: 12px;
+    text-align: center;
+}
+
+#title 
+{
+    font-size: 40px;
+    width: 100%;
+    margin: 2% 5%;
+    text-align: center;
+    font-family: 'Lato';
+    color: #FFFFFF;
+    text-align: center;
+}
+
+.login_div, .register_div
+{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    backface-visibility: hidden;
+}
+
+.register_div
+{
+    transform: rotateY(180deg); 
+    text-align: center;
+}
+
+
+#loggedInDiv
+{
+    font-size: 30px;
+    width: 70%;
+    margin-left: 15%;
+    padding: 25px;
+    background-color: #b2b2b2;
+}
+
+#accessUIDiv
+{
+    font-size: 30px;
+    width: 70%;
+    margin-left: 15%;
+    padding: 25px;
+    background-color: #b2b2b2;
+}
+
+.buttons
+{
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #029561;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.buttons:hover{
+    background-color: #00d5124f;
+    color: #FFFFFF;
+    opacity: 50%;
+}
+
+#loginName
+{
+	font-size: 30px;
+}
+#loginPassword
+{
+	font-size: 30px;
+}
+#searchText
+{
+	font-size: 30px;
+}
+#colorText
+{
+	font-size: 30px;
+}
+
+input[type="text"],input[type="password"]{
+    border-radius: 25px;
+    text-align: center;
+    width: 80%;
+    margin-left: 10%;
+    margin-bottom: 2%;
+    font-family: 'Lato';
+}
+
+#inner-title{
+    display: inline-block;
+    font-size: 0.8em;
+    width: 90%;
+    text-align: center;
+    margin-left: 5%;
+    margin-bottom: 2%;
+    font-family: 'Lato';
+    color: #95060a;
+}
+
+#loginResult{
+    display: inline-block;
+    font-size: 0.8em;
+    width: 90%;
+    text-align: center;
+    margin-left: 5%;
+    margin-bottom: 2%;
+    font-family: 'Lato';
+    color: #95060a;
+}
+
+#userName{
+    display: inline-block;
+    width: 80%;
+    margin-left: 10%;
+    text-align: center;
+}
+
+#logoutButton{
+    width: 20%;
+    margin-left: 40%;
+}
+
+select{
+    width: 30%;
+    margin-left: 35%;
+    margin-top: 2%;
+    font-size: 0.75em;
+    font-family: 'Lato';
+}
+
