@@ -89,7 +89,7 @@ function doRegister(){
 
 
 
-    var tmp = {FirstName:firstName, LastName:lastName, Username:newEgg, Pwd:password};
+    var tmp = {firstName:firstName, lastName:lastName, login:newEgg, password:password};
     var jsonPayload = JSON.stringify( tmp );
 
     var url = urlBase + '/Register.' + extension;
