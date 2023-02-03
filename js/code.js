@@ -111,7 +111,7 @@ function doRegister(){
 	}
 	catch(err)
 	{
-		document.getElementById("registerAddUser").innerHTML = err.message;
+		document.getElementById("registerResult").innerHTML = err.message;
 	}
 
 
