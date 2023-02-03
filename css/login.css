@@ -1,7 +1,7 @@
 body 
 {
     background-color: #F5E9BE;
-    background-image: url('background.png');
+    background-image: url('../images/background.png');
     position: absolute;
     left: 0px;
     top: 0px;
