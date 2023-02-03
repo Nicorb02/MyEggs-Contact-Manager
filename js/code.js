@@ -30,8 +30,8 @@ function doLogin()
 	firstName = "";
 	lastName = "";
 	
-	let login = document.getElementById("username").value;
-	let password = document.getElementById("password").value;
+	let login = document.getElementById("loginName").value;
+	let password = document.getElementById("loginPassword").value;
 //	var hash = md5( password );
 	
 	document.getElementById("loginResult").innerHTML = "";
@@ -68,6 +68,7 @@ function doLogin()
 				window.location.href = "contacts.html";
 			}
 		};
+        console.log(jsonPayload);
 		xhr.send(jsonPayload);
 	}
 	catch(err)
@@ -107,6 +108,7 @@ function doRegister(){
                 window.location.href = "login.html";
 			}
 		};
+        console.log(jsonPayload);
 		xhr.send(jsonPayload);
 	}
 	catch(err)
