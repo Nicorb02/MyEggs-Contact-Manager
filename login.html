@@ -18,7 +18,8 @@
 <body>
 
     <!--logo in-->
-    <a href="index.html"><img id="logo" src="icon.png"></a>
+    <img id="logo" src="images/icon.png"></a>
+       
 
     <!--forms for login and register-->
     <section>
@@ -37,6 +38,7 @@
             </div>
 
             <button type="button" id="loginButton" class="buttons" onclick="doLogin();"> Login </button>
+            <span id="loginResult"></span>
             <p>Need to make an account? <a href="#"class="openRegister">Register</a></p>
         </form>
         </div>
@@ -63,7 +65,7 @@
                 </div>
 
                     <button type="button" id="registerButton" class="buttons" onclick="doRegister();"> Register </button>
-
+                    <span id="registerResult"></span>
                 <p>Have an account already? <a href="#" class="openLogin">Login</a></p>
             </form>
         </div>
