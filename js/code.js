@@ -15,11 +15,12 @@ openLogin.addEventListener("click", ()=>{
 	cover_div.style.transform="rotateY(0deg)";
 });
 
-
+//const urlBase = '127.0.0.1'
 const urlBase = 'http://my-eggs.com/LAMPAPI';
 const extension = 'php';
 
 let userId = 0;
+var id = 0;
 let firstName = "";
 let lastName = "";
 
@@ -78,9 +79,40 @@ function doLogin()
 
 
 function doRegister(){
+    let firstName = document.getElementById("fname").value;
+    let lastName = document.getElementById("lname").value;
+    let newEgg = document.getElementById("username").value;
+    let password = document.getElementById("password").value;
+
+    document.getElementById("registerResult").innerHTML = "";
 
 
 
+    var tmp = {FirstName:firstName, LastName:lastName, Username:newUser, Pwd:password};
+    var jsonPayload = JSON.stringify( tmp );
+
+    var url = urlBase + '/Register.' + extension;
+
+	var xhr = new XMLHttpRequest();
+	xhr.open("POST", url, true);
+	xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
+    
+    try
+	{
+		xhr.onreadystatechange = function() 
+		{
+			if (this.readyState == 4 && this.status == 200) 
+			{
+                document.getElementById("registerResult").innerHTML = "User added";
+                window.location.href = "login.html";
+			}
+		};
+		xhr.send(jsonPayload);
+	}
+	catch(err)
+	{
+		document.getElementById("registerAddUser").innerHTML = err.message;
+	}
 
 
 }
