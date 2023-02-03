@@ -1,7 +1,7 @@
 body 
 {
     background-color: #F5E9BE;
-    background-image: url('background2.png');
+    background-image: url('../images/background.png');
     position: absolute;
     left: 0px;
     top: 0px;
@@ -44,6 +44,7 @@ body
     text-align: center;
     font-family: 'Lato';
     justify-content: center;
+    display: inline-block;
 }
 
 
