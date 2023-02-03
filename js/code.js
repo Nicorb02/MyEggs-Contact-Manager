@@ -79,47 +79,6 @@ function doLogin()
 }
 
 
-function doRegister(){
-    let firstName = document.getElementById("fname").value;
-    let lastName = document.getElementById("lname").value;
-    let newEgg = document.getElementById("username").value;
-    let password = document.getElementById("password").value;
-
-    document.getElementById("registerResult").innerHTML = "";
-
-
-
-    var tmp = {firstName:firstName, lastName:lastName, login:newEgg, password:password};
-    var jsonPayload = JSON.stringify( tmp );
-
-    var url = urlBase + '/Register.' + extension;
-
-	var xhr = new XMLHttpRequest();
-	xhr.open("POST", url, true);
-	xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
-    
-    try
-	{
-		xhr.onreadystatechange = function() 
-		{
-			if (this.readyState == 4 && this.status == 200) 
-			{
-                document.getElementById("registerResult").innerHTML = "User added";
-                window.location.href = "login.html";
-			}
-		};
-        console.log(jsonPayload);
-		xhr.send(jsonPayload);
-	}
-	catch(err)
-	{
-		document.getElementById("registerResult").innerHTML = err.message;
-	}
-
-
-}
-
-
 function saveCookie()
 {
 	let minutes = 20;
@@ -160,6 +119,48 @@ function readCookie()
 		document.getElementById("userName").innerHTML = "Logged in as " + firstName + " " + lastName;
 	}
 }
+
+
+function doRegister(){
+    let firstName = document.getElementById("fname").value;
+    let lastName = document.getElementById("lname").value;
+    let newEgg = document.getElementById("username").value;
+    let password = document.getElementById("password").value;
+
+    document.getElementById("registerResult").innerHTML = "";
+
+
+
+    var tmp = {firstname:firstName, lastname:lastName, login:newEgg, password:password};
+    var jsonPayload = JSON.stringify( tmp );
+
+    var url = urlBase + '/Register.' + extension;
+
+	var xhr = new XMLHttpRequest();
+	xhr.open("POST", url, true);
+	xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
+    
+    try
+	{
+		xhr.onreadystatechange = function() 
+		{
+			if (this.readyState == 4 && this.status == 200) 
+			{
+                document.getElementById("registerResult").innerHTML = "User added";
+                window.location.href = "login.html";
+			}
+		};
+        console.log(jsonPayload);
+		xhr.send(jsonPayload);
+	}
+	catch(err)
+	{
+		document.getElementById("registerResult").innerHTML = err.message;
+	}
+
+
+}
+
 
 function doLogout()
 {
