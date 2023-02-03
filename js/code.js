@@ -3,7 +3,10 @@ let cover_div = document.querySelector(".cover_div");
 let openRegister = document.querySelector(".openRegister");
 let openLogin = document.querySelector(".openLogin");
 
-
+let userId = 0;
+var id = 0;
+let firstName = "";
+let lastName = "";
 
 
 openRegister.addEventListener("click", ()=>{
@@ -19,10 +22,7 @@ openLogin.addEventListener("click", ()=>{
 const urlBase = 'http://my-eggs.com/LAMPAPI';
 const extension = 'php';
 
-let userId = 0;
-var id = 0;
-let firstName = "";
-let lastName = "";
+
 
 function doLogin()
 {
@@ -170,4 +170,3 @@ function doLogout()
 	document.cookie = "firstName= ; expires = Thu, 01 Jan 1970 00:00:00 GMT";
 	window.location.href = "index.html";
 }
-
