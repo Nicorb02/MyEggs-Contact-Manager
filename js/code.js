@@ -15,7 +15,7 @@ openLogin.addEventListener("click", ()=>{
 	cover_div.style.transform="rotateY(0deg)";
 });
 
-//const urlBase = '127.0.0.1'
+//const urlBase = '';
 const urlBase = 'http://my-eggs.com/LAMPAPI';
 const extension = 'php';
 
