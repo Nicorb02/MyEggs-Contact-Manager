@@ -30,11 +30,13 @@ My Eggs:  A web application functioning as a contact manager assigned by COP4331
             
 Files Contained:
   - Front End:
-    - HTML Skeleton
-    - CSS Design
-    - Javascript Functionality
+    - HTML Files
+    - CSS Files
+          - Inside css folder
+    - Javascript Files
+          - Inside js folder
   - Back End:
     - 6 API Endpoints
-    - Brief Explanation .txt File
-  - Database:
-    - Commands .txt File
+          - Inside LAMPAPI folder
+  - General:
+    - README.md file
