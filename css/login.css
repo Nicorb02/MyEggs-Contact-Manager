@@ -30,7 +30,7 @@ body
 }
 
 .input-field {
-    border-radius: 12px;
+    border-radius: 60px;
     outline: 0;
     background: #f2f2f2;
     width: 100%;
@@ -43,20 +43,20 @@ body
     text-align: center;
     font-family: 'Lato';
     justify-content: center;
-    display: inline-block;
+    display:inline-block;
 }
 
 
 
 .form {
-    border-radius: 17px;
+    border-radius: 15px;
     position: relative;
     background: lightgreen;
     margin: 0 auto 100px;
     top: 100px;
     padding: 30px;
     overflow: hidden;
-    height: 350px;
+    height: 410px;
     transition: .6s;
     display: inline-block;
     font-family: 'Lato';
@@ -178,4 +178,3 @@ section {
 {
 	font-size: 30px;
 }
-
