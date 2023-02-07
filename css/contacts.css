@@ -113,9 +113,6 @@ body {
     font-family: 'Lato';
     background: #f2f2f2;
     width: 100%;
-    border: 0;
-    margin: 0 0 15px;
-    padding: 15px;
     box-sizing: border-box;
     font-size: 18px;
     position: relative;
@@ -126,7 +123,8 @@ body {
 
 .search-bar {
     width: 100%;
-    max-width: 700px;
+    max-width: 600px;
+    height: 70px;
     background: rgba(255, 255, 255, 1);
     display: flex;
     align-items: center;
@@ -156,8 +154,8 @@ body {
 .search-bar button {
     border: 0;
     border-radius: 50%;
-    width: 60px;
-    height: 60px;
+    width: 50px;
+    height: 50px;
     cursor: pointer;
 }
 
@@ -187,7 +185,7 @@ th {
     border-radius: 45px;
     font-family: 'Lato';
     color: #F5E9BE;
-    font-size: 18px;
+    font-size: 16px;
     background: #174C4F;
     padding: 0px;
     text-decoration: none;
