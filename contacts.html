@@ -1,36 +1,165 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <title>My Eggs Contact Manager</title>
-    <link rel="stylesheet" href="css/contacts.css">
-    <link href = 'https://fonts.googleapis.com/css?family=Abril Fatface' rel = 'stylesheet'>
-    <link href = 'https://fonts.googleapis.com/css?family=Lato' rel = 'stylesheet'>
+    <link
+      href="https://fonts.googleapis.com/css?family=Abril Fatface"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Lato"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="css/contacts.css" />
+
     <script type="text/javascript" src="js/code.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  </head>
+  <body>
+    <!--Logo elements-->
+    <div class="logo">
+      <img id="logo-icon" src="images/icon.png" alt="logo image" />
+      <h1 id="logo-text">My Eggs</h1>
+    </div>
     
-</head>
-<body>
-    <img id="logo" src="images/icon.png" alt="logo image">
-    <h1 id="logo-text">My Eggs</h1>
 
     <button id="logout" onclick="doLogout()">Logout</button>
 
-    <button class="btn">Add</button>
+    
+    <div id="accessUIDiv">
+      <button class="btn" id="addBtn" onclick="showAddBox()">Add</button>
 
-    <div class="container">
-        <!--would put link in action?-->
-        <form action="" class="search-bar">
-            <input type="text" placeholder="Search Contacts" name="q">
+        <div class="container">
+          <!--would put link in action?-->
+          <form action="" class="search-bar">
+            <input type="text" class="searchInput" placeholder="Search Contacts" name="q" />
             <button type="submit">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
-                    <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
-                </svg>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="currentColor"
+                class="bi bi-search"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"
+                />
+              </svg>
             </button>
-        </form>
-    </div>
+          </form>
+        </div>
+      </div>
 
-</body>
+      <div class="addContacts">
+        <form id="addEgg" action="" method="post" style="display:none">
+          <input type="text" class="addInput" id="addFirstName" placeholder="First Name" required>
+          <br />
+          <input type="text" class="addInput" id="addLastName" placeholder="Last Name" required>
+          <br />
+          <input type="text" class="addInput" id="addNumber" placeholder="XXX-XXX-XXXX" required>
+          <br />
+          <input type="text" class="addInput" id="addEmail" placeholder="email@example.com" required>
+          <br />
+          <button id="addContactBtn" onclick="addContact()">Add Contact</button>
+        </form>
+
+        
+      </div>
+      <div class="table-responsive" id="contactsTable">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>First&nbsp;Name</th>
+              <th>Last&nbsp;Name</th>
+              <th>Number</th>
+              <th>Email</th>
+              <th>Update</th>
+              <th>Delete</th>
+            </tr>
+          </thead>
+
+          <tbody id="tableBody">
+            <tr>
+              <td>Dude</td>
+              <td>Guy</td>
+              <td>434-423-4532</td>
+              <td>Guy@gmail.com</td>
+              <td>
+                <button id="editBtn0" class="tableButtons" onclick="editContact(0)">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
+                    <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
+                    <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/>
+                  </svg>
+                </button>
+                <button id="saveBtn0" style="display:none">Save Changes</button>
+              </td>
+              <td>
+                <button id="trashBtn0" class="tableButtons" onclick="deleteContact(0)">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
+                    <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"/>
+                    <path fill-rule="evenodd" d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z"/>
+                  </svg>
+                </button>
+              </td>
+            </tr>
+            <tr>
+              <td>Jimmy</td>
+              <td>Sunderland</td>
+              <td>434-423-4532</td>
+              <td>Guy@gmail.com</td>
+              <td>
+                <button id="editBtn1" class="tableButtons" onclick="editContact(1)">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
+                    <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
+                    <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/>
+                  </svg>
+                </button>
+                <button id="saveBtn1" style="display:none">Save Changes</button>
+              </td>
+              <td>
+                <button id="trashBtn1" class="tableButtons" onclick="deleteContact(1)">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
+                    <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"/>
+                    <path fill-rule="evenodd" d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z"/>
+                  </svg>
+                </button>
+              </td>
+            </tr>
+            <tr>
+              <td>Ryan</td>
+              <td>Orange</td>
+              <td>434-423-4532</td>
+              <td>Guy@gmail.com</td>
+              <td>
+                <button id="editBtn2" class="tableButtons" onclick="editContact(2)">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
+                    <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
+                    <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/>
+                  </svg>
+                </button>
+                <button id="saveBtn2" style="display:none">Save Changes</button>
+              </td>
+              <td>
+                <button id="trashBtn2" class="tableButtons" onclick="deleteContact(2)">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
+                    <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"/>
+                    <path fill-rule="evenodd" d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z"/>
+                  </svg>
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+  </body>
 </html>
