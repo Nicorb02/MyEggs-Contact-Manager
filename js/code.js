@@ -158,13 +158,15 @@ function showAddBox() {
 		add.style.display = "block";
 		table.style.display = "none";
 	}
+
 	else {
 		add.style.display = "none";
 		table.style.display = "block";
 	}
 }
 
-// ADDED BY HUSSAIN - Priority !!!
+// Needs to be called at the start of the html doc
+// done???
 function loadContacts() {
 	let tmp = {
 		search: "",
@@ -220,39 +222,111 @@ function loadContacts() {
 
 }
 
-// Can work on after working on loadContacts() - Priority: !
+// DONE?
 function editContact(rowNum) {
 	document.getElementById('editBtn' + rowNum).style.display = 'none';
 	document.getElementById('saveBtn' + rowNum).style.display = 'inline-block';
 
 	let fname = document.getElementById("firstName" + rowNum);
 	let lname = document.getElementById("lastName" + rowNum);
-	let email = document.getElementById("phone" + rowNum);
-	let phone = document.getElementById("email" + rowNum);
+	let phone = document.getElementById("phone" + rowNum);
+	let email = document.getElementById("email" + rowNum);
 
 	let fnameText = fname.innerText;
 	let lnameText = lname.innerText;
-	let emailText = email.innerText;
 	let phoneText = phone.innerText;
+	let emailText = email.innerText;
 
 	fname.innerHTML = "<input type='text' id='fnameText" + rowNum + "' value='" + fnameText + "'>";
 	lname.innerHTML = "<input type='text' id='lnameText" + rowNum + "' value='" + lnameText + "'>";
-	email.innerHTML = "<input type='text' id='emailText" + rowNum + "' value='" + emailText + "'>";
 	phone.innerHTML = "<input type='text' id='phoneText" + rowNum + "' value='" + phoneText + "'>";
+	email.innerHTML = "<input type='text' id='emailText" + rowNum + "' value='" + emailText + "'>";
 }
 
-// work on later
+// done?
 function saveContact(rowNum) {
+	let newFirst = document.getElementById("fnameText" + rowNum).value;
+	let newLast = document.getElementById("lnameText" + rowNum).value;
+	let newFullname = newFirst + " " + newLast;
+	let newPhone = document.getElementById("phoneText" + rowNum).value;
+	let newEmail = document.getElementById("emailText" + rowNum).value;
 
+	// change from input to not input
+	document.getElementById("firstName" + rowNum).innerHTML = newFirst;
+	document.getElementById("lastName" + rowNum).innerHTML = newLast;
+	document.getElementById("phone" + rowNum).innerHTML = newPhone;
+	document.getElementById("email" + rowNum).innerHTML = newEmail;
+
+
+	document.getElementById('editBtn' + rowNum).style.display = 'inline-block';
+	document.getElementById('saveBtn' + rowNum).style.display = 'none';
+
+	let tmp = {
+		id: rowNum,
+		name: newFullname,
+		phone: newPhone,
+		email: newEmail
+	};
+
+	let jsonPayload = JSON.stringify(tmp);
+
+	let url = urlBase + '/Update.' + extension;
+
+	let xhr = new XMLHttpRequest();
+	xhr.open("POST", url, true);
+	xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
+
+	try {
+		xhr.onreadystatechange = function () {
+			if (this.readyState == 4 && this.status == 200) {
+				console.log("Changes saved");
+				loadContacts();
+			}
+		};
+
+		xhr.send(jsonPayload);
+	} catch (err) {
+		console.log(err.message);
+	}
 }
 
 // ADDED BY HUSSAIN - Priority !
-function deleteContact() {
+function deleteContact(rowNum) {
+	let firstName = document.getElementById("firstName" + rowNum).innerText;
+	let lastName = document.getElementById("lastName" + rowNum).innerText;
+
+	// Proceed with deletion only if the confirmation is yes
+	if (confirm("Would you like to delete " + firstName + " " + lastName + "?") === true) {
+		// delete from the HTML file
+		document.getElementById("row" + rowNum).outerHTML = "";
+
+		let tmp = {
+			id: rowNum
+		};
+
+		let jsonPayload = JSON.stringify(tmp);
+		let url = urlBase + '/DeleteContact' + extension;
+
+		let xhr = new XMLHttpRequest();
+		xhr.open("POST", url, true);
+		xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
+
+		try {
+			xhr.onreadystatechange() = function () {
+				if (this.readyState == 4 && this.status == 200) {
+					console.log(firstName + lastName + " Deleted");
+					loadContacts();
+				}
+			};
+			xhr.send(jsonPayload);
+		} catch (err) {
+			console.log(err.message);
+		}
+	}
 
 }
 
-
-// ADDED BY HUSSAIN - Done?
+// DONE?
 function addContact() {
 	let fname = document.getElementById("addFirstName");
 	let lname = document.getElementById("addLastName");
@@ -260,25 +334,27 @@ function addContact() {
 	// API endpoint only uses full name
 	let fullName = fname + " " + lname;
 
-	let phoneNum = document.getElementById("addNumber");
-	let emailAddr = document.getElementById("addEmail");
+	let phoneNumber = document.getElementById("addNumber");
+	let emailAddress = document.getElementById("addEmail");
 
 	let tmp = {
 		name: fullName,
-		phone: phoneNum,
-		email: emailAddr,
+		phone: phoneNumber,
+		email: emailAddress,
 		userID: userId
 	};
 
+	// get ready to send json with information
 	let jsonPayload = JSON.stringify(tmp);
-
 	let url = urlBase + '/AddContact.' + extension;
 
 	let xhr = new XMLHttpRequest();
 	xhr.open("POST", url, true);
 	xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
+
 	try {
 		xhr.onreadystatechange = function () {
+			// if everything is in order to add a contact, reload the contacts and hide the add box
 			if (this.readyState == 4 && this.status == 200) {
 				console.log("Contact added");
 				document.getElementById("addEgg").reset();
@@ -286,6 +362,7 @@ function addContact() {
 				showAddBox();
 			}
 		};
+
 		xhr.send(jsonPayload);
 	}
 	catch (err) {
@@ -294,26 +371,23 @@ function addContact() {
 
 }
 
+function searchContacts() {
 
-// This is an agenda of the stuff i have been working on and kinda where I'm at rn
+}
+// This is an agenda of the stuff i have been working on and kinda where I'm at rn - mostly for myself
 
-// finish -> edit, save, and delete
+// add hello user text
+// add backwards navigation for the add button
+
 // start -> search contacts
 // make sure that the table HTML was right (loadContacts())
-
 // stylizing
 // 	- need to center the add contact button
 // 	- need to style the trash and edit + save changes buttons
 //	- need to stylize them too^
-
-// think of things to split off to others
-//		- search bar styling
-//		- searching tables
-
 // need to handle contacts that were already added
 // clicking edit removes edit on last button
 // find a way to cancel editing a contact -> can just save changes and if nothing changes dont upload
-
 // making sure that fields satisfy pattern (Number patterns and email addresses)
 // make sure you can't edit and leave out required fields
 
@@ -350,3 +424,4 @@ function addContact() {
 
 // If you end up working on some of this stuff, thank you so much i really appreciate the help.
 // I'm really sorry if I've put any of you guys in a spot or made you worried about this project.
+
