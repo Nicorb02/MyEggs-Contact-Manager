@@ -38,7 +38,7 @@ body
     margin: 0 0 15px;
     padding: 15px;
     box-sizing: border-box;
-    font-size: 10px;
+    font-size: 20px;
     position: relative;
     text-align: center;
     font-family: 'Lato';
@@ -56,7 +56,7 @@ body
     top: 100px;
     padding: 30px;
     overflow: hidden;
-    height: 410px;
+    height: 330px;
     transition: .6s;
     display: inline-block;
     font-family: 'Lato';
