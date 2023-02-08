@@ -2,6 +2,8 @@ let section = document.querySelector("section");
 let cover_div = document.querySelector(".cover_div");
 let openRegister = document.querySelector(".openRegister");
 let openLogin = document.querySelector(".openLogin");
+let form = document.querySelector("form");
+let register = document.getElementById("register");
 
 let userId = 0;
 var id = 0;
@@ -12,13 +14,14 @@ let lastName = "";
 const urlBase = 'http://my-eggs.com/LAMPAPI';
 const extension = 'php';
 
-openRegister.addEventListener("click", () => {
-	cover_div.style.transform = "rotateY(180deg)";
-	section.style.height = "450px";
-});
-
 openLogin.addEventListener("click", () => {
 	cover_div.style.transform = "rotateY(0deg)";
+});
+
+openRegister.addEventListener("click", () => {
+	cover_div.style.transform = "rotateY(180deg)";
+	register.style.height="450px";
+    	register.style.width="350px";
 });
 
 function doLogin() {
@@ -424,4 +427,3 @@ function searchContacts() {
 
 // If you end up working on some of this stuff, thank you so much i really appreciate the help.
 // I'm really sorry if I've put any of you guys in a spot or made you worried about this project.
-
