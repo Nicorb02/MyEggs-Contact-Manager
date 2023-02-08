@@ -24,12 +24,11 @@
         <form id="login"class="form">
             <span>Login Here</span>
             <div>
-                <input type="text" class="input-field" id="loginName" placeholder="Enter Username" name="loginName" required>
-
+                <input type="text" class="input-field" id="loginName" placeholder="Username" name="loginName" required>
             </div>
 
             <div>
-                <input type="password" class="input-field" id="loginPassword" placeholder="Enter Password" name="loginPassword" required>
+                <input type="password" class="input-field" id="loginPassword" placeholder="Password" name="loginPassword" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required>
             </div>
 
             <button type="button" id="loginButton" class="buttons" onclick="doLogin();"> Login </button>
@@ -41,22 +40,22 @@
 
 
             <div class="register_div">
-            <form id="login" class="form">
+            <form id="register" class="form">
                 <span>Register Here</span>
                 <div>
-                    <input type="text" class="input-field" id="fname" placeholder="first name" name="fname" required>
+                    <input type="text" class="input-field" id="fname" placeholder="First Name" name="fname" required>
                 </div>
             
                 <div>
-                    <input type="text" class="input-field" id="lname" placeholder="last name" name="lname" required>
+                    <input type="text" class="input-field" id="lname" placeholder="Last Name" name="lname" required>
                 </div>
 
                 <div>
-                    <input type="text" class="input-field" id="username" placeholder="username" name="username" required>
+                    <input type="text" class="input-field" id="username" placeholder="Username" name="username" required>
                 </div>
 
                 <div>
-                    <input type="password" class="input-field" id="password" placeholder="password" name="password" required>
+                    <input type="password" class="input-field" id="password" placeholder="Password" name="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required>
                 </div>
 
                     <button type="button" id="registerButton" class="buttons" onclick="doRegister();"> Register </button>
