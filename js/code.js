@@ -4,6 +4,7 @@ let openRegister = document.querySelector(".openRegister");
 let openLogin = document.querySelector(".openLogin");
 let form = document.querySelector("form");
 let register = document.getElementById("register");
+let eyeball = document.getElementById("show-password2");
 
 let userId = 0;
 const contactIds = [];
