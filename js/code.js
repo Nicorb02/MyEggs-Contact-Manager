@@ -40,7 +40,7 @@ openRegister.addEventListener("click", () => {
 	cover_div.style.transform = "rotateY(180deg)";
 	register.style.height = "450px";
 	register.style.width = "350px";
-	eyeball.style.top = "69%";
+	eyeball.style.top = "71%";
 });
 
 
