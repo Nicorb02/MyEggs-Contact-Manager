@@ -30,7 +30,7 @@ body
 }
 
 .input-field {
-    border-radius: 60px;
+    border-radius: 50px;
     outline: 0;
     background: #f2f2f2;
     width: 100%;
@@ -46,8 +46,20 @@ body
     display:inline-block;
 }
 
-
-
+.fa-eye{
+    position: absolute;
+    top: 50%;
+    right: 4%;
+    cursor: pointer;
+    color: #174c4f; 
+}
+.fa-eye2{
+    position: absolute;
+    top: 50%;
+    right: 4%;
+    cursor: pointer;
+    color: #174c4f; 
+}
 .form {
     border-radius: 15px;
     position: relative;
