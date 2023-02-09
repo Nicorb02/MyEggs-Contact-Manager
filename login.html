@@ -12,6 +12,7 @@
     <script defer src="js/code.js"></script>
     <link href = 'https://fonts.googleapis.com/css?family=Abril Fatface' rel = 'stylesheet'>
     <link href = 'https://fonts.googleapis.com/css?family=Lato' rel = 'stylesheet'>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" rel="stylesheet" >
 
 
 </head>
@@ -28,7 +29,8 @@
             </div>
 
             <div>
-                <input type="password" class="input-field" id="loginPassword" placeholder="Password" name="loginPassword" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required>
+                <input type="password" class="input-field" id="loginPassword" placeholder="Password" name="loginPassword" required>
+                <i class="fa-solid fa-eye" id="show-password"></i>
             </div>
 
             <button type="button" id="loginButton" class="buttons" onclick="doLogin();"> Login </button>
@@ -55,7 +57,8 @@
                 </div>
 
                 <div>
-                    <input type="password" class="input-field" id="password" placeholder="Password" name="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required>
+                    <input type="password" class="input-field" id="password" placeholder="Password" name="password" required>
+                    <i class="fa-solid fa-eye" id="show-password2"></i>
                 </div>
 
                     <button type="button" id="registerButton" class="buttons" onclick="doRegister();"> Register </button>
