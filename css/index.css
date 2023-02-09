@@ -1,0 +1,76 @@
+body {
+    background-color: #F5E9BE;
+    background-image: url('../images/background.png');
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    height: 100%;
+    margin: 0;
+    overflow: hidden;
+    background-attachment: fixed;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#logo {
+    position: fixed;
+    height: 15%;
+    left: 36px;
+    top: 36px;
+}
+
+#title {
+  font-family: 'Abril Fatface';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 95px;
+  color: #174C4F;
+  text-decoration: none;
+}
+
+h1:hover {
+    text-decoration: underline #174C4F;
+    text-decoration-thickness: 4px;
+}
+
+section {
+  height: 70vh;
+  width: 99vw;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+    max-width: 700px;
+    margin: auto;
+
+    height: vh;
+    display: flex;
+    justify-content: center;
+}
+
+.btn1 {
+    position: fixed;
+    width: 145px;
+    height: 40px;
+    top: 34px;
+    right: 40px;
+    border-radius: 45px;
+    font-family: 'Lato';
+    color: #E0E6B4;
+    font-size: 16px;
+    background: #174C4F;
+    padding: 0px;
+    text-decoration: none;
+    border-color: #174C4F;
+    border-style: solid;
+  }
+  
+  .btn1:hover {
+    color: #174C4F;
+    background: #E0E6B4;
+    text-decoration: none;
+  }

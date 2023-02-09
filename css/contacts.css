@@ -1,0 +1,210 @@
+body {
+    background-color: #F5E9BE;
+}
+
+#logo-icon {
+    position: fixed;
+    width: 100px;
+    height: 100px;
+    left: 38px;
+    top: 20px;
+}
+
+#logo-text {
+    position: fixed;
+    left: 23px;
+    top: 100px;
+    font-family: 'Abril Fatface';
+    color: #174c4f;
+}
+
+.btn {
+    position: fixed;
+    border-style: solid;
+    color: #174C4F;
+    padding: 12px 16px;
+    font-size: 18px;
+    cursor: pointer;
+    border-radius: 15px;
+    border-color: #174C4F;
+    background-color: #F5E9BE;
+    top: 150px;
+    right: 36px;
+}
+
+.btn::before {
+    width: 20px;
+    float: center;
+    margin-right: 5px;
+    margin-top: -2px;
+}
+
+.btn:hover {
+    color: #F5E9BE;
+    background: #174C4F;
+    text-decoration: none;
+}
+
+.btn:hover::before {
+    color: #F5E9BE;
+    background: #174C4F;
+}
+
+.addContacts {
+    align-items: center;
+    align-self: center;
+}
+
+#addEgg {
+    width: 25%;
+    border-radius: 15px;
+    background: #174C4F;
+    margin: 0 auto 100px;
+    top: 100px;
+    padding: 30px;
+    overflow: hidden;
+    height: 375px;
+    font-family: 'Lato';
+}
+
+#addContactBtn {
+    position: relative;
+    left: 80px;
+    border-style: solid;
+    padding: 12px 16px;
+    font-size: 18px;
+    cursor: pointer;
+    border-radius: 15px;
+    border-color: #174C4F;
+    background-color: #029561;
+    color: #000000;
+}
+
+.addInput {
+    text-align: center;
+    border-radius: 15px;
+    font-family: 'Lato';
+    background: #f2f2f2;
+    width: 100%;
+    border: 0;
+    margin: 0 0 15px;
+    padding: 15px;
+    box-sizing: border-box;
+    font-size: 18px;
+    position: relative;
+    font-family: 'Lato';
+    justify-content: center;
+    display: inline-block;
+}
+
+.container {
+    width: 100%;
+    padding: 5%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.searchInput {
+    border-radius: 15px;
+    font-family: 'Lato';
+    background: #f2f2f2;
+    width: 100%;
+    box-sizing: border-box;
+    font-size: 18px;
+    position: relative;
+    font-family: 'Lato';
+    justify-content: center;
+    display: inline-block;
+}
+
+.search-bar {
+    width: 100%;
+    max-width: 600px;
+    height: 70px;
+    background: rgba(255, 255, 255, 1);
+    display: flex;
+    align-items: center;
+    border-radius: 60px;
+    padding: 10px 20px;
+}
+
+.search-bar input {
+    background: transparent;
+    flex: 1;
+    border: 0;
+    outline: none;
+    padding: 24px 20px;
+    font-size: 20px;
+    color: #000000;
+}
+
+::placeholder {
+    color: #000000;
+
+}
+
+.search-bar button svg {
+    width: 25px;
+}
+
+.search-bar button {
+    border: 0;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+}
+
+.table-responsive {
+    background-color: #FFFFFF;
+    color: #174C4F;
+    width: 95%;
+    height: 356px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 15px;
+    font-family: 'Lato';
+    font-size: 20px;
+    overflow-y: auto;
+}
+
+th {
+    background-color: #174C4F;
+    color: #F5E9BE;
+    position: sticky;
+    top: 0;
+}
+
+span#userName {
+    position: fixed;
+    font-family: 'Lato';
+    font-size: 16px;
+    top: 27px;
+    right: 130px;
+    color: #174C4F;
+    font-weight: bold;
+}
+
+#logout {
+    position: fixed;
+    width: 80px;
+    height: 36px;
+    top: 20px;
+    right: 20px;
+    border-radius: 45px;
+    font-family: 'Lato';
+    color: #F5E9BE;
+    font-size: 16px;
+    background: #174C4F;
+    padding: 0px;
+    text-decoration: none;
+    border-color: #174C4F;
+    border-style: solid;
+}
+
+#logout:hover {
+    color: #174C4F;
+    background: #F5E9BE;
+    text-decoration: none;
+}

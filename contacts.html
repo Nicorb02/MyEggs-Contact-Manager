@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>My Eggs Contact Manager</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Abril Fatface"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Lato"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="css/contacts.css" />
+
+    <script type="text/javascript" src="js/code.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+      document.addEventListener('DOMContentLoaded', function() {
+        readCookie();
+        loadContacts();
+      })
+  </script>
+  </head>
+  <body>
+    <div id=loggedInDiv>
+      <span id="userName"></span>
+      <button id="logout" onclick="doLogout()">Logout</button>
+    </div>
+
+    <!--Logo elements-->
+    <div class="logo">
+      <img id="logo-icon" src="images/icon.png" alt="logo image" />
+      <h1 id="logo-text">My Eggs</h1>
+    </div>
+    
+    <div id="accessUIDiv">
+      <button class="btn" id="addBtn" onclick="showAddBox()">Add</button>
+
+        <div class="container">
+          <form class="search-bar">
+            <input type="text" class="searchInput" id="searchData" placeholder="Search Contacts" name="q" onkeydown="searchContacts()"/>
+            <button type="submit" onclick="searchContacts()">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="currentColor"
+                class="bi bi-search"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"
+                />
+              </svg>
+            </button>
+          </form>
+        </div>
+      </div>
+
+      <div class="addContacts">
+        <form id="addEgg" action="" method="post" style="display:none">
+          <input type="text" class="addInput" id="addFirstName" placeholder="First Name" required>
+          <br />
+          <input type="text" class="addInput" id="addLastName" placeholder="Last Name" required>
+          <br />
+          <input type="text" class="addInput" id="addNumber" placeholder="XXX-XXX-XXXX" required>
+          <br />
+          <input type="text" class="addInput" id="addEmail" placeholder="email@example.com" required>
+          <br />
+          <button id="addContactBtn" onclick="addContact()">Add Contact</button>
+        </form>
+
+        
+      </div>
+      <div class="table-responsive" id="contactsTable">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>First&nbsp;Name</th>
+              <th>Last&nbsp;Name</th>
+              <th>Number</th>
+              <th>Email</th>
+              <th>Update</th>
+              <th>Delete</th>
+            </tr>
+          </thead>
+
+          <tbody id="tableBody">
+          </tbody>
+        </table>
+      </div>
+  </body>
+</html>
