@@ -19,7 +19,7 @@ body {
 }
 
 .btn {
-    position: relative;
+    position: fixed;
     border-style: solid;
     color: #174C4F;
     padding: 12px 16px;
@@ -28,13 +28,11 @@ body {
     border-radius: 15px;
     border-color: #174C4F;
     background-color: #F5E9BE;
-    top: 145px;
-    left: 250px;
+    top: 150px;
+    right: 36px;
 }
 
 .btn::before {
-    content: url('../images/person-add.svg');
-    color: #174C4F;
     width: 20px;
     float: center;
     margin-right: 5px;
@@ -48,7 +46,6 @@ body {
 }
 
 .btn:hover::before {
-    content: url('../images/person-add-hover.svg');
     color: #F5E9BE;
     background: #174C4F;
 }
@@ -66,13 +63,13 @@ body {
     top: 100px;
     padding: 30px;
     overflow: hidden;
-    height: 395px;
+    height: 375px;
     font-family: 'Lato';
 }
 
 #addContactBtn {
     position: relative;
-
+    left: 80px;
     border-style: solid;
     padding: 12px 16px;
     font-size: 18px;
@@ -80,7 +77,7 @@ body {
     border-radius: 15px;
     border-color: #174C4F;
     background-color: #029561;
-    color: #F5E9BE;
+    color: #000000;
 }
 
 .addInput {
@@ -163,18 +160,31 @@ body {
     background-color: #FFFFFF;
     color: #174C4F;
     width: 95%;
+    height: 356px;
     margin-left: auto;
     margin-right: auto;
     border-radius: 15px;
     font-family: 'Lato';
     font-size: 20px;
+    overflow-y: auto;
 }
 
 th {
     background-color: #174C4F;
     color: #F5E9BE;
+    position: sticky;
+    top: 0;
 }
 
+span#userName {
+    position: fixed;
+    font-family: 'Lato';
+    font-size: 16px;
+    top: 27px;
+    right: 130px;
+    color: #174C4F;
+    font-weight: bold;
+}
 
 #logout {
     position: fixed;
