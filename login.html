@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+</html>
+    
+<head>
+    <meta charset="UTF-8">
+    <!-- title-->
+    <title> My Eggs Login </title>
+
+    <!--java files and css link-->
+    <link rel="stylesheet" href="css/login.css"/>
+    <script defer src="js/code.js"></script>
+    <link href = 'https://fonts.googleapis.com/css?family=Abril Fatface' rel = 'stylesheet'>
+    <link href = 'https://fonts.googleapis.com/css?family=Lato' rel = 'stylesheet'>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" rel="stylesheet" >
+
+
+</head>
+
+<body>
+    <!--forms for login and register-->
+    <section>
+    <div class="cover_div">
+        <div class = "login_div">
+        <form id="login"class="form">
+            <span>Login Here</span>
+            <div>
+                <input type="text" class="input-field" id="loginName" placeholder="Username" name="loginName" required>
+            </div>
+
+            <div>
+                <input type="password" class="input-field" id="loginPassword" placeholder="Password" name="loginPassword" required>
+                <i class="fa-solid fa-eye" id="show-password"></i>
+            </div>
+
+            <button type="button" id="loginButton" class="buttons" onclick="doLogin();"> Login </button>
+            <span id="loginResult"></span>
+            <p>Need to make an account? <a href="#"class="openRegister">Register</a></p>
+        </form>
+        </div>
+
+
+
+            <div class="register_div">
+            <form id="register" class="form">
+                <span>Register Here</span>
+                <div>
+                    <input type="text" class="input-field" id="fname" placeholder="First Name" name="fname" required>
+                </div>
+            
+                <div>
+                    <input type="text" class="input-field" id="lname" placeholder="Last Name" name="lname" required>
+                </div>
+
+                <div>
+                    <input type="text" class="input-field" id="username" placeholder="Username" name="username" required>
+                </div>
+
+                <div>
+                    <input type="password" class="input-field" id="password" placeholder="Password" name="password" required>
+                    <i class="fa-solid fa-eye" id="show-password2"></i>
+                </div>
+
+                    <button type="button" id="registerButton" class="buttons" onclick="doRegister();"> Register </button>
+                    <span id="registerResult"></span>
+                <p>Have an account already? <a href="#" class="openLogin">Login</a></p>
+            </form>
+        </div>
+
+    </div>
+ </section>
+
+ <input type = "image" id = "logo" onclick = "location.href = 'index.html';" src = "images/icon.png">
+
+</body>
